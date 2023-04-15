@@ -1,0 +1,24 @@
+{
+    "name": "Youtube Archiver",
+    "version": "1.0",
+    "description": "Archive Youtube Videos",
+    "manifest_version": 2,
+    "content_scripts": [
+      {
+        "matches": [
+          "https://*.youtube.com/playlist?list=*"
+        ],
+        "js": ["content.js"]
+      }
+    ],
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "browser_action": {
+      "default_popup": "public/popup.html",
+      "default_title": "Lookup a definition!"
+    },
+    "permissions": ["storage"], 
+    "content_security_policy": "script-src 'self' https://www.gstatic.com/ https://*.firebaseio.com https://www.googleapis.com; object-src 'self'"
+
+  }
